@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+/* Basic page styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-color: #171717;
+    color: #f5f5f5;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.topbar {
+    width: 90%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-mark {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #b7d878;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d9f99d;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.brand-name {
+    color: #f5f5f5;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.status {
+    color: #a5a5a5;
+    font-size: 13px;
+}
+
+.status::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 7px;
+    border-radius: 50%;
+    background-color: #bef264;
+}
+
+/* Main content */
+main {
+    width: 90%;
+    max-width: 860px;
+    margin: 0 auto;
+    padding-top: 120px;
+    padding-bottom: 40px;
+    flex: 1;
+}
+
+.eyebrow {
+    margin: 0 0 18px;
+    color: #d9f99d;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h1 {
+    max-width: 680px;
+    margin: 0;
+    color: #f5f5f5;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 64px;
+    line-height: 1;
+}
+
+.subtitle {
+    max-width: 530px;
+    margin: 24px 0 0;
+    color: #a5a5a5;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* Question box */
+.composer-wrap {
+    margin-top: 54px;
+}
+
+.composer {
+    padding: 9px;
+    border: 1px solid #3b3b3b;
+    border-radius: 18px;
+    background-color: #202020;
+}
+
+.composer:focus-within {
+    border-color: #687d47;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    min-height: 92px;
+    padding: 15px;
+    border: 0;
+    outline: 0;
+    resize: vertical;
+    background-color: transparent;
+    color: #f5f5f5;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+textarea::placeholder {
+    color: #777777;
+}
+
+.composer-footer {
+    padding: 8px 5px 2px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hint {
+    color: #747474;
+    font-size: 12px;
+}
+
+button {
+    padding: 12px 17px;
+    border: 0;
+    border-radius: 11px;
+    background-color: #d9f99d;
+    color: #171717;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #bef264;
+}
+
+button:disabled {
+    cursor: wait;
+    opacity: 0.6;
+}
+
+/* Answer box */
+.answer {
+    display: none;
+    margin-top: 30px;
+    padding: 25px 28px;
+    border: 1px solid #3b3b3b;
+    border-radius: 16px;
+    background-color: #2a2a2a;
+}
+
+.answer.visible {
+    display: block;
+}
+
+.answer-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 16px;
+    color: #d9f99d;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.answer-label span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #bef264;
+}
+
+.answer-text {
+    white-space: pre-wrap;
+    color: #dedede;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.error {
+    color: #fca5a5;
+}
+
+footer {
+    width: 90%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 24px 0;
+    color: #686868;
+    font-size: 12px;
+}
+
+/* Small screen styles */
+@media (max-width: 600px) {
+    .topbar,
+    main,
+    footer {
+        width: 90%;
+    }
+
+    .topbar {
+        padding: 18px 0;
+    }
+
+    .status {
+        display: none;
+    }
+
+    main {
+        padding-top: 70px;
+    }
+
+    h1 {
+        font-size: 44px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .composer-wrap {
+        margin-top: 38px;
+    }
+
+    .hint {
+        display: none;
+    }
+
+    .composer-footer {
+        justify-content: flex-end;
+    }
+
+    .answer {
+        padding: 21px;
+    }
+}
