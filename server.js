@@ -15,6 +15,10 @@ const ai = new GoogleGenAI({
     apiKey: process.env.GEMINI_API_KEY
 })
 
+app.get("/", (req, res)=>{
+    res.send("Backend is working")
+})
+
 
 app.post("/ask", async (req, res) => {
     try {
